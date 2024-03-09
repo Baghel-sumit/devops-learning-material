@@ -10,7 +10,7 @@
 
 ******** Docker basic commands ********
 
-> docker run [image_name] ( run/download - start a container )
+> docker run [image_name:version] ( run/download - start a container, it uses default version latest )
 > docker ps ( list running containers )
 > docker ps -a ( list all containers )
 > docker stop [image_name/image_id] (to stop the container)
@@ -22,3 +22,4 @@
 > docker exec [image_name] cat [file_path] (to execute a file instructions)
 > docker run -d [image_name] (run in the background)
 > docker attach [container_id] (attach back to the container which is running in the background)
+> docker --name [container_name] [image_name/image_id] (running a image with a naming the container)
