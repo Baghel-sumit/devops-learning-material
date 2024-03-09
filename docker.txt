@@ -1,0 +1,24 @@
+******** Demo - how to install docker ********
+
+> uninstall old docker
+> install community version of docker
+
+******** Docker hub ********
+
+> search and follow the instructions
+
+
+******** Docker basic commands ********
+
+> docker run [image_name] ( run/download - start a container )
+> docker ps ( list running containers )
+> docker ps -a ( list all containers )
+> docker stop [image_name/image_id] (to stop the container)
+> docker rm [image_name/image_id] (to remove the container)
+> docker images (list the images with their sizes)
+> docker rmi [image_id/image_name] (to remove the images)
+> docker pull [image_name] (pull the image not run)
+> docker run [image_name] sleep [time in ms eg: 5] (to run the container and after some time it will get slept)
+> docker exec [image_name] cat [file_path] (to execute a file instructions)
+> docker run -d [image_name] (run in the background)
+> docker attach [container_id] (attach back to the container which is running in the background)
