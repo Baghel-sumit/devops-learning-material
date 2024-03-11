@@ -23,3 +23,5 @@
 > docker run -d [image_name] (run in the background)
 > docker attach [container_id] (attach back to the container which is running in the background)
 > docker --name [container_name] [image_name/image_id] (running a image with a naming the container)
+> docker inspect [container_name] (to get the all information about a container in json formate)
+> docker logs [container_id/container_name] (to see the logs of the container)
