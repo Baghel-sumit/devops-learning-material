@@ -25,3 +25,62 @@
 > docker --name [container_name] [image_name/image_id] (running a image with a naming the container)
 > docker inspect [container_name] (to get the all information about a container in json formate)
 > docker logs [container_id/container_name] (to see the logs of the container)
+
+******** Docker commands examples ********
+
+> docker run [container_name] cat /etc/*release*
+> docker run [container_name] sleep 15
+> docker run -d [container_name] sleep 15 ( running in background )
+> docker attach [container_id] ( back to the container foreground )
+> docker stop [container_id] (to stop the container which is running)
+
+
+** Note: Timer container, it runs continuously and print current time, it never stops as time never stops so to stop you have to press `ctrl + c`
+
+
+******** Docker Images ********
+
+Q. How to create my own Images
+
+-> Create a docker file with set of instructions like below -
+
+  FROM Ubuntu
+  RUN apt-get update
+  RUN apt-get install python
+
+  RUN pip install flask
+  RUN pip install flask-mysql
+
+  COPY . /opt/source-code
+
+  ENTRYPOINT FLASK_APP=/opt/source-code/app.py flask run
+
+-> after saving this file run below command to create image locally -
+
+> docker build Dockerfile -t [folder_path]
+
+-> To make it available on docker registry use below command - 
+
+> docker push [image_name]
+
+******** Structure of docker file ********
+
+Dockerfile
+
+[INSTRUCTION] [ARGUMENT]
+
+-> it uses layered architecture i.e. step by step process to follow
+
+-> to see the history of instructions
+
+> docker history [folder_path]
+
+-> All the layers is cached by the docker.
+-> we can containerize everything.
+
+
+*** > docker run -it ubuntu bash ( to run the bash of ubuntu )
+
+******** Environment Variables ********
+
+> docker run -e [variable_name]=[value] [image_name]
